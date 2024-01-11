@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Data Application</title>
+    <link rel="stylesheet" href="color.css">
+</head>
+<body>
+    <div class="container">
+        <img src="https://media.licdn.com/dms/image/C4D0BAQEf59t6FQsDNA/company-logo_200_200/0/1630536086925/scorpiox_technologies_logo?e=2147483647&v=beta&t=INEy4n0UioVqoHAEnAR8HCaFv_qtrk0ivAWn1UAyDmc" alt="Placeholder Image" style="display: block; margin: 0 auto;">
+        <h1>Aerial Imagery Calculator</h1>
+        <form id="geoForm">
+            <label for="areaInput">Area (km²):</label>
+            <input type="number" id="areaInput" required>
+            
+            <label for="dataTypeSelect">Select Data Type:</label>
+            <select id="dataTypeSelect" onchange="toggleCustomValueInput()" required>
+                <option value="standardImagery">Standard Imagery</option>
+                <option value="multispectralData">Multispectral Data</option>
+                <option value="thermalData">Thermal Data</option>
+                <option value="lidarData">LiDAR Data</option>
+                <option value="other">Other</option>
+            </select>
+
+            <div id="customValueContainer" style="display: none;">
+                <label for="customValueInput">Enter Custom Value:</label>
+                <input type="number" id="customValueInput">
+            </div>
+
+            <button type="button" onclick="calculateCost()">Calculate</button>
+
+            <p id="output"></p>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
